@@ -1,0 +1,20 @@
+git clone <url>
+
+git fetch -all
+git fetch --all
+
+git branch 
+
+git checkout <branch name>
+git checkout - b <branch name>
+
+git status
+
+git add <file name>
+
+git diff <fillname>
+
+git commit -m <msg>
+
+git push origin <brsnch name>
+

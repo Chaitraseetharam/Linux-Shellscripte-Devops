@@ -1,0 +1,127 @@
+linux commands
+
+
+
+Cat – create file 
+concatenate file 
+copy file
+
+EX:-  cat  > file1
+
+
+Touch – it create empty file & used for time stamp
+Create empty file
+Create multiple empty file
+Change time of the file [ Access time (touch –a) / Modify time (touch –m) / Change time] 
+
+EX:-  touch file1
+      touch .file1         –  hidden file 1
+
+
+Vi – it’s a editor which  is used for editing programs
+
+EX:- vi file1
+W – to save
+Q – quit
+Q! – force quit
+
+
+Nano – its also a editor
+
+EX:- nano file1
+
+
+Top                       – real time view of a running system
+
+mkdir dir                 – create directory
+mkdir .dir1               – hidden directory1
+
+cd                        – change directory
+cd ..                     – (..)change parent (.) change current directory
+
+pwd                       – print working directory
+
+ls -a                     – to see all file
+ls                        – list file          
+ls                          [list directory contents]
+ls -a                       [list directory all contents]
+ls -A                       [list directory almost all contents]
+ls -l                       [long list format]
+ls -lh                      [long list human read able format]
+ls -l /etc                  [long list on given etc directory]
+ls -ld                      [short list file by last modifying]
+ls -lt                      [short list file by time]
+ls –ltr                     [list file in reverse order]
+
+.                          [ current directory ]
+. .                        [ parent directory ]
+~                          [ home directory ]
+/                          [root directory ]
+
+
+rm dir                    – remove directory
+rmdir -p                  – remove both parent & child directory
+rmdir -pv                 – remove root
+rm -rf                    –  remove forcefully
+rm -r                     – remove empty files
+
+mv f1 dir1                – move f1 to directoey1           
+mv                        – move the file /rename the file
+
+cat  > file1               [ create file using cat command]
+cat file1                  [ to c the content inside the file1] 
+cat  >>file1               [ to edit the file 1]
+cat f1 f2  >all            [ all the content of both  f1 & f2 go to the all file ]
+
+touch f1                   [create file using touch command ]
+stat f2                    [change the time of f2]
+touch -a f3                [change the access time of f3]
+touch -m  f4               [change the modify time of f4]
+
+cp f1 f2                   [copy the content of f1 to f2]
+cp                       – copy the file
+
+mkdir dir1                 [create new directory]
+mkdir dir1/dir2/dir3       [create directory inside directory]
+mkdir dir1 dir2 dir3       [move directory at once]
+
+cd dir                     [ go inside directory]
+cd file                    [ go inside file]   
+Cd ../../..                [ come out of directory at once]
+
+Man command                [ stands manual for command] 
+man ls
+man cd
+man grep
+
+whoami                     [ who r u logged in as]
+Uname                      [show kernel config]
+
+df                         [show disk usage]
+df -h / df --help                  
+
+du                         [show directory space usage]
+du -h / du --help
+du -sh                     [ human readable size in GB]
+
+chmod u+x section.txt      [To add the execute permission to the user]
+chmod u-x section.txt      [To remove the permission]
+
+man ls | cat  >a.txt       [Pipe Command]
+
+crontab -e
+crontab -u username -e  
+crontab -l
+***** sh/home/linux/test.s
+*/10 **** sh/home/linux/test.sh
+
+tac "file name"            [to write reverse of the content in file]
+tree                       [Directory in tree formate]
+history                    [to c the history of exicuted commends]
+pwd                        [ print working directory (to c the path)]
+wget "filename"            [To donload the file or directory]
+whoami                     [to c currently logged in as]
+w                          [to c who is in online]
+
+
+
