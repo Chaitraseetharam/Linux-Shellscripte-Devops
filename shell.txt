@@ -1,0 +1,329 @@
+(1) using if and else find the greater no?
+
+read -p "enter 1st no:" num1
+read -p "enter 2st no:" num2
+read -p "enter 3st no:" num3
+
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+then
+echo $num1 " is greater"
+
+elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+then
+echo $num2 " is greater"
+else
+echo $num3 " is greater"
+fi
+
+
+
+(2) useing if and else find the age?
+
+read -p "enter the age:" age
+
+if [ $age -ge 18 ]
+then
+echo "u r eligible to vote"
+else
+echo "u r not eligible to vote"
+fi
+
+
+
+(3)sum all the digite useing whileloop?
+
+read -p "enter the no:" num
+
+sum=0
+
+while [ $num -gt 0 ]
+
+do
+quo=`expr $num / 10`
+rem=`expr $num % 10`
+sum=`expr $sum + $rem`
+num=$quo
+done
+
+echo "sum is:" $sum
+
+
+
+(4) by useing whileloop doing even nd odd?
+ 
+no=1
+even=( )
+odd=( )
+i=0
+j=0
+
+while [ $no -lt 11 ]                       [ 1 < 11]    ->  true                                       [ 2 < 11]    ->  true                         [ 3 < 11]    ->  true                                                   [ 11 < 11]    -> F
+do
+n=$((no%2))                                ( 1 % 2)    -> remander is not (0)  it's (1)                ( 2 % 2)    -> remander is  (0)               (3 % 2)    -> remander is  (1) 
+                                                 
+if [ $n == 0 ]                             [1 == 0] -> (F)                                             [0 == 0] -> (T)                               [1 == 0] -> (F)                                                        till [ 11 == 0]  -> F
+then
+even [$i] =$no                             odd [0] =1                                                  even [0] =2                                   odd [1] =3
+i=$((i+1))                                 0+1                                                         0+1                                           1+1    
+else
+odd [$j]=$no
+j=$((j+1))
+fi 
+
+no=$((no+1))
+done
+
+echo "enter the no:" ${even[*]}
+echo "enter the no:" ${odd [*]}
+
+
+
+(5) by useing for loop do even nd odd?
+
+even=( )
+odd=( )
+j=0 
+k=0
+for (( i=1; i<11; i++))                       ((i=1; 1<11;1))               ((i=2;2<11;2))            ((i=3;3<11;3))       ((i=4;4<11;4))        ((i=5;5<11;5)) it go's till ((i=11;11<11;11))    11 is no less then 11 so (F)
+
+if [ $((i%2)) == 0 ]                          [1%2 == 0] (F)                [2%2 ==0](T)              [3%2 ==0](F)         [4%2 ==0](T)          [5%2 ==0](F)  
+then 
+even[j]=$i                                    odd[0]=1 (0+1)                even [0]=2 (0+1)          odd[1]=3 (1+1)       even [1]=4 (1+1)      odd[2]=5 (2+1)
+j=$((j+1))                                    k=1                           j=1                       k=2                  j=2                   k=3
+else
+odd[k]=$i                                                             
+k=$((k+1))                                                                   
+fi
+done
+echo "enter the no:" ${even[@]}
+echo "enter the no:" ${odd [@]}
+
+
+
+(6) take i/p from user anddo even and odd no?
+
+approach : 
+1) take i/p from user and store in array
+2) loop the array
+3) check for even or odd and store it in respective array
+4) print the even & odd no
+
+
+read -a  "enter a num:" no                                   read -a  "enter a num:" no                           read -a  "enter a num:" no                                                 
+even( )                                                      even( )                                              len=${#no[@]}                                                                                               
+odd( )                                                       odd( )                                               even( )     
+i=0                                                          i=0                                                  odd( )
+j=0                                                          j=0                                                  k=0
+                                                                                                                  j=0
+for no in ${no [@]}                                          for no in ${no [@]}                                   
+do                                                           do                                                   for ((i=0;i<len;i++))                                                          
+let a=$no%2                                                  if [ $((no%2)) == 0 ]                                do  
+if [ $a -eg 0 ]                                              then                                                 no=${no[$i]}
+then                                                         even[$i]=$no                                         if [ $((no%2)) == 0 ]
+even [i] =$no                                                i=$((i+1))                                           then  
+((i=i+1))                                                    else                                                 even[$i]=$no
+else                                                         odd [$j] =$no                                        k=$((k+1)) 
+odd [j] =$no                                                 j=$((j+1))                                           else
+((j=j+1))                                                    fi                                                   odd [$j] =$no
+fi                                                           done                                                 j=$((j+1))
+done                                                                                                              fi
+                                                                                                                  done
+echo "enter the no:" ${even[@]}                                                                                                                                                        
+echo "enter the no:" ${odd [@]}
+
+ 
+
+(7) case statement do a choise of days?
+
+read -p "enter a no:" no                                                                  if  [ $no == 1 ]
+                                                                                          then
+case $no in                                                                               echo "day : sun"
+                                               
+                                                                                          elif [ $no == 2] 
+1)                                                                                        then
+echo "day : sunday"                                                                       echo "day : mon "
+;;                                                                        
+                                                                                          elif [ $no == 3] 
+2)                                                                                        then
+echo "day : monday"                                                                       echo "day : tues "
+;;
+                                                                                          elif [ $no == 4] 
+3)                                                                                        then
+echo "day : tuesday"                                                                      echo "day : wed "
+;;
+                                                                                          elif [ $no == 5] 
+4)                                                                                        then
+echo "day : wednesday"                                                                    echo "day : thurs "
+;;
+                                                                                          elif [ $no == 6] 
+5)                                                                                        then
+echo "day : thursday"                                                                     echo "day :fri "
+;;
+                                                                                          elif [ $no == 7] 
+6)                                                                                        then
+echo "day : friday"                                                                       echo "day : sat "
+;;                                                                                                    
+                                                                                          else  
+7)                                                                                        echo "invalid no"
+echo "day : saturday"                                                                     fi
+;;                                                                                                 
+
+*)
+echo "invalide no"
+;;
+
+esac
+
+
+
+(8) useing case do arithmatic opearation?
+
+read -p "enter a 1st no:" a
+read -p "enter a 2nd no:" b
+
+echo "manu:"
+
+echo "1:add"
+echo "2:sub"
+echo "3:mul"
+echo "4:div"
+
+read -p "enter ur choise:"  choise
+
+case $choise in
+
+1)
+echo add : `expr $a + $b`
+;;
+
+2)
+echo sub : `expr $a - $b`
+;;
+
+3)
+echo mul : `expr $a \* $b`
+;;
+
+4)
+echo div : `expr $a / $b`
+;;
+
+5)
+echo "choise is invalide"
+;;
+easc
+
+
+9)write a shell script that will add two number,which are supplled as command line argument?
+
+nano sum .sh
+echo $#
+if [$# -eq 2]
+then
+echo sum : `expr $1 + $2`
+else 
+echo “invalid argument pls provide 2 no”
+fi
+ 
+10)write a script to determine whether given file exist or not?
+
+(a) echo dir1
+       read dir1
+       if [ -d dir1 ]
+       then 
+       echo " directory has been found "
+       else
+       echo " directory has not found "
+
+or 
+
+if [ -f $ file ]
+then 
+echo $ file is found
+else 
+echo $ file is not found
+
+
+11)Shell Script to print the reverse of a number?
+
+Source Code
+read -p "Enter a number: " number
+temp=$number
+while [ $temp -ne 0 ]
+do
+reverse=$reverse$((temp%10))
+temp=$((temp/10))
+done
+echo "Reverse of $number is $reverse"
+
+
+12)Shell script to find greatest of three numbers?
+
+echo "Enter Num1”
+read num1
+echo "Enter Num2"
+read num2
+echo "Enter Num3"
+read num3
+
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+then
+echo "greter is" $num1
+elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+then
+echo "greter is" $num2
+else
+echo"greter is" $num3
+fi
+
+
+13)shell script to find the age?
+
+echo enter ur age
+read age
+
+if[ $age -ge 18 ]
+then
+echo "u can vote"
+else
+echo "u can't vote"
+fi
+
+
+14)shell script for finding the file?
+echo enter ur file name
+read test
+
+if [-f $test]
+then
+echo"file found"
+else
+echo "file not found"
+
+
+15) shell script to find parameter?
+echo 1st per:$1
+read $1
+echo 2nd per: $2
+read $2
+echo total per:$#
+
+
+16)to give user no?
+echo $#
+echo enter 1st no
+read a
+echo enter 2nd no
+read b
+echo sum:`expr $a + $b `
+
+
+17)To do arithmetic programs?
+echo enter 1st no:$2
+echo enter 2nd no:$1   
+
+echo sum :`expr $1 + $2`
+echo sub :`expr $1 - $2`
+echo div :`expr $1 / $2`
+echo mul :`expr $1 \* $2`
+
